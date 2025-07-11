@@ -19,12 +19,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The job was automatically triggered by a ${{ github.event_name
-      - run: echo "This job is now running on a ${{ runner.os }} server hosted by
-      - run: echo "The name of your branch is ${{ github.ref }} and your reposito
-      - name: Check out repository code
+      - run: echo "Job triggered by ${{ github.event_name }} event"
+      - run: echo "Job now running on a ${{ runner.os }} server"
+      - run: echo "Repo ${{ github.repository }} Branch ${{ github.ref }}"
+      - name: Check out repository
         uses: actions/checkout@v4
-      - run: echo "The ${{ github.repository }} repository has been cloned to the
+      - run: echo " ${{ github.repository }} repository cloned to runner"
       - name: Setup pages
         uses: actions/configure-pages@v5
       - name: Setup Python 3.11
@@ -34,7 +34,7 @@ jobs:
       - run: mkdir -p output
       - name: Running python
         run: |
-          python3 schedgen.py > schedule.html
+          python3 schedgen.py > output/schedule.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -51,5 +51,5 @@ jobs:
       - name: Upload static files
         id: deployment
         uses: actions/deploy-pages@v4
-      - run: echo "This job's status is ${{ job.status }}."
+      - run: echo "Job's final status is ${{ job.status }}."
     
