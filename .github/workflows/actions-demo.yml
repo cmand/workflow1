@@ -2,7 +2,7 @@ name: CMAND Actions Demo
 run-name: ${{ github.actor }} publishing 🚀
 on: [push]
 jobs:
-  Course Update:
+  Course-Update:
     runs-on: ubuntu-latest
     permissions:
       pages: write
