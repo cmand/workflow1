@@ -50,4 +50,4 @@ jobs:
       - name: Upload static files
         id: deployment
         uses: actions/deploy-pages@v4  
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "This job's status is ${{ job.status }}."
