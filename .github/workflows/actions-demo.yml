@@ -1,6 +1,13 @@
 name: CMAND Actions Demo
-run-name: ${{ github.actor }} publishing 🚀
+
+run-name: ${{ github.actor }} publishing
+
 on: [push]
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+  
 jobs:
   Course-Update:
     runs-on: ubuntu-latest
