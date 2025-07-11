@@ -2,7 +2,7 @@ name: CMAND Actions Demo
 run-name: ${{ github.actor }} publishing 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Course Update:
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -14,6 +14,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Setup pages
+        uses: actions/configure-pages@v5
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
@@ -22,8 +24,8 @@ jobs:
       - name: Running python job2
         run: |
           python3 hello.py > output/hello.txt
-      - name: Update artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-page-artifact@v3
         with:
           name: hello.txt
           path: output
