@@ -32,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: hello.txt
+          name: github-pages
           path: output
           
       - name: Upload static files
