@@ -1,0 +1,23 @@
+tr.odd td {
+	background-color: #ffff99;
+}
+tr.even td {
+	background-color: #ff0099;
+}
+tr.lab td {
+	background-color: #66ffff;
+}
+tr.quiz td {
+	background-color: #ff5555;
+}
+tr.holiday td {
+	background-color: #55ff55;
+}
+h3 {  
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333399;
+}
+td {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
