@@ -35,7 +35,7 @@ jobs:
       - name: Running python
         run: |
           python3 schedgen.py > output/schedule.html
-          cp main.css > output
+          cp main.css output/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
