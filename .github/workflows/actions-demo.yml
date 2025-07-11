@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: mkdir -p output    
-      - name: Running python job2
+      - name: Running python
         run: |
           python3 hello.py > output/hello.txt
       - name: Upload artifact
