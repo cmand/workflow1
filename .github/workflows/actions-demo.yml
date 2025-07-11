@@ -1,6 +1,6 @@
 name: CMAND Actions Demo
 
-run-name: ${{ github.actor }} publishing
+run-name: ${{ github.actor }} publishing to gh-pages
 
 on: [push]
 
