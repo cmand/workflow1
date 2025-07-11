@@ -22,12 +22,14 @@ jobs:
       - name: Running python job1
         run: |
           python3 hello.py
+      - run: mkdir -p output    
       - name: Running python job2
         run: |
-          python3 hello.py > output.txt
+          python3 hello.py > output/hello.txt
       - name: Update repo
         uses: actions/upload-artifact@v4
         with:
-          name: "output.txt"
+          name: hello.txt
+          path: output
         
       - run: echo "🍏 This job's status is ${{ job.status }}."
