@@ -1,5 +1,5 @@
 name: CMAND Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} publishing 🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -22,4 +22,12 @@ jobs:
       - name: Running python job1
         run: |
           python3 hello.py
+      - name: Running python job2
+        run: |
+          python3 hello.py > output.txt
+      - name: Update repo
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: "output.txt"
+        
       - run: echo "🍏 This job's status is ${{ job.status }}."
