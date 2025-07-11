@@ -6,7 +6,7 @@ on: [push]
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   pages: write
@@ -49,6 +49,5 @@ jobs:
     steps:          
       - name: Upload static files
         id: deployment
-        uses: actions/deploy-pages@v4
-        
+        uses: actions/deploy-pages@v4  
       - run: echo "🍏 This job's status is ${{ job.status }}."
